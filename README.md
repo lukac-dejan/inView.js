@@ -12,7 +12,7 @@ inView.js is a function that allows you to select element or group of elements o
 Since this is a simple plugin, the usage is simple too.
 First, add the inView.js to your document along with jQuery library:
 
-`<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>`
+`<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>`
 
 `<script type="text/javascript" src="_js/jquery.inView.js"></script>`
 
