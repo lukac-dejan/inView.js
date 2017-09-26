@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>inView.js - Example1</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="_js/jquery.inView.js"></script>
+<script src="_js/statusDisplay.js"></script>
+	<style>
+		html, body {
+			font-family:Helvetica, Arial, Verdana, sans-serif;
+		}
+		#container {
+			position: relative;
+			width: 40%;
+			margin-left: auto;
+			margin-right: auto;
+			padding-top: 100px;
+		}
+		#status {
+			position: fixed;
+			top: 0;
+			left: 30%;
+			width: 40%;
+			background-color: rgba(255,255,255,0.5);
+			border-radius: 15px;
+			border: 2px solid #ccc;
+		}
+		#status span.bg {
+			display: inline-block;
+			border-radius: 5px;
+			width: 200px;
+			background-color: rgba(0,0,0,0.75);
+			margin: 10px;
+			padding: 10px;
+			color: #fff;
+			font-weight:bold;
+		}
+		#redBox, #blueBox, #greenBox {
+			position: relative;
+			width: 300px;
+			height: 200px;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 10px;
+			color: #fff;
+		}
+		#redBox { background-color: #f00; }
+		#blueBox { background-color: #00f; }	
+		#greenBox { background-color: #0f0; }
+	</style>
+	
+</head>
+
+<body>
+	<div id="container">
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nibh nisl, iaculis a neque ac, mattis scelerisque purus. Integer a nulla mollis, venenatis eros id, luctus eros. Maecenas et vulputate turpis. Suspendisse sagittis tellus eget purus auctor, eu varius est consectetur. Nullam a massa tellus. Vivamus faucibus in tortor quis pellentesque. Nunc tristique libero arcu, egestas blandit eros vehicula sit amet. Nullam iaculis, dolor sed euismod volutpat, nunc est mattis nibh, sit amet sagittis leo arcu ultrices massa. Mauris feugiat purus vitae massa luctus, eu pretium sapien vestibulum. Sed nisl dui, vehicula sit amet lacus quis, lacinia mollis magna. Curabitur risus turpis, rhoncus efficitur mi vel, dignissim ultricies nunc. Fusce mattis ex ut libero porta convallis.
+		</p>
+		<p>
+			Curabitur ullamcorper ipsum sagittis neque finibus, sed lacinia libero mollis. Proin bibendum nulla at velit faucibus interdum. Ut congue ipsum mollis, varius augue sit amet, tincidunt velit. Nullam vestibulum sapien at odio sodales luctus. Fusce vitae commodo nisi. In hac habitasse platea dictumst. Phasellus nibh lectus, lobortis mollis pulvinar quis, tempus id nisl. Nullam vitae nibh rhoncus, ornare magna a, laoreet metus. Donec accumsan interdum maximus. Sed vulputate felis et dignissim finibus. Vestibulum bibendum mattis augue, ut mollis justo hendrerit a. Ut a metus porta, cursus quam vel, vestibulum augue. Proin aliquet lacinia convallis.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nibh nisl, iaculis a neque ac, mattis scelerisque purus. Integer a nulla mollis, venenatis eros id, luctus eros. Maecenas et vulputate turpis. Suspendisse sagittis tellus eget purus auctor, eu varius est consectetur. Nullam a massa tellus. Vivamus faucibus in tortor quis pellentesque. Nunc tristique libero arcu, egestas blandit eros vehicula sit amet. Nullam iaculis, dolor sed euismod volutpat, nunc est mattis nibh, sit amet sagittis leo arcu ultrices massa. Mauris feugiat purus vitae massa luctus, eu pretium sapien vestibulum. Sed nisl dui, vehicula sit amet lacus quis, lacinia mollis magna. Curabitur risus turpis, rhoncus efficitur mi vel, dignissim ultricies nunc. Fusce mattis ex ut libero porta convallis.
+		</p>
+		<p>
+			Curabitur ullamcorper ipsum sagittis neque finibus, sed lacinia libero mollis. Proin bibendum nulla at velit faucibus interdum. Ut congue ipsum mollis, varius augue sit amet, tincidunt velit. Nullam vestibulum sapien at odio sodales luctus. Fusce vitae commodo nisi. In hac habitasse platea dictumst. Phasellus nibh lectus, lobortis mollis pulvinar quis, tempus id nisl. Nullam vitae nibh rhoncus, ornare magna a, laoreet metus. Donec accumsan interdum maximus. Sed vulputate felis et dignissim finibus. Vestibulum bibendum mattis augue, ut mollis justo hendrerit a. Ut a metus porta, cursus quam vel, vestibulum augue. Proin aliquet lacinia convallis.
+		</p>
+		<div id="redBox" class="trackInView">#redBox</div>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nibh nisl, iaculis a neque ac, mattis scelerisque purus. Integer a nulla mollis, venenatis eros id, luctus eros. Maecenas et vulputate turpis. Suspendisse sagittis tellus eget purus auctor, eu varius est consectetur. Nullam a massa tellus. Vivamus faucibus in tortor quis pellentesque. Nunc tristique libero arcu, egestas blandit eros vehicula sit amet. Nullam iaculis, dolor sed euismod volutpat, nunc est mattis nibh, sit amet sagittis leo arcu ultrices massa. Mauris feugiat purus vitae massa luctus, eu pretium sapien vestibulum. Sed nisl dui, vehicula sit amet lacus quis, lacinia mollis magna. Curabitur risus turpis, rhoncus efficitur mi vel, dignissim ultricies nunc. Fusce mattis ex ut libero porta convallis.
+		</p>
+		<p>
+			Curabitur ullamcorper ipsum sagittis neque finibus, sed lacinia libero mollis. Proin bibendum nulla at velit faucibus interdum. Ut congue ipsum mollis, varius augue sit amet, tincidunt velit. Nullam vestibulum sapien at odio sodales luctus. Fusce vitae commodo nisi. In hac habitasse platea dictumst. Phasellus nibh lectus, lobortis mollis pulvinar quis, tempus id nisl. Nullam vitae nibh rhoncus, ornare magna a, laoreet metus. Donec accumsan interdum maximus. Sed vulputate felis et dignissim finibus. Vestibulum bibendum mattis augue, ut mollis justo hendrerit a. Ut a metus porta, cursus quam vel, vestibulum augue. Proin aliquet lacinia convallis.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nibh nisl, iaculis a neque ac, mattis scelerisque purus. Integer a nulla mollis, venenatis eros id, luctus eros. Maecenas et vulputate turpis. Suspendisse sagittis tellus eget purus auctor, eu varius est consectetur. Nullam a massa tellus. Vivamus faucibus in tortor quis pellentesque. Nunc tristique libero arcu, egestas blandit eros vehicula sit amet. Nullam iaculis, dolor sed euismod volutpat, nunc est mattis nibh, sit amet sagittis leo arcu ultrices massa. Mauris feugiat purus vitae massa luctus, eu pretium sapien vestibulum. Sed nisl dui, vehicula sit amet lacus quis, lacinia mollis magna. Curabitur risus turpis, rhoncus efficitur mi vel, dignissim ultricies nunc. Fusce mattis ex ut libero porta convallis.
+		</p>
+		<p>
+			Curabitur ullamcorper ipsum sagittis neque finibus, sed lacinia libero mollis. Proin bibendum nulla at velit faucibus interdum. Ut congue ipsum mollis, varius augue sit amet, tincidunt velit. Nullam vestibulum sapien at odio sodales luctus. Fusce vitae commodo nisi. In hac habitasse platea dictumst. Phasellus nibh lectus, lobortis mollis pulvinar quis, tempus id nisl. Nullam vitae nibh rhoncus, ornare magna a, laoreet metus. Donec accumsan interdum maximus. Sed vulputate felis et dignissim finibus. Vestibulum bibendum mattis augue, ut mollis justo hendrerit a. Ut a metus porta, cursus quam vel, vestibulum augue. Proin aliquet lacinia convallis.
+		</p>
+		<div id="blueBox" class="trackInView">#blueBox</div>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nibh nisl, iaculis a neque ac, mattis scelerisque purus. Integer a nulla mollis, venenatis eros id, luctus eros. Maecenas et vulputate turpis. Suspendisse sagittis tellus eget purus auctor, eu varius est consectetur. Nullam a massa tellus. Vivamus faucibus in tortor quis pellentesque. Nunc tristique libero arcu, egestas blandit eros vehicula sit amet. Nullam iaculis, dolor sed euismod volutpat, nunc est mattis nibh, sit amet sagittis leo arcu ultrices massa. Mauris feugiat purus vitae massa luctus, eu pretium sapien vestibulum. Sed nisl dui, vehicula sit amet lacus quis, lacinia mollis magna. Curabitur risus turpis, rhoncus efficitur mi vel, dignissim ultricies nunc. Fusce mattis ex ut libero porta convallis.
+		</p>
+		<p>
+			Curabitur ullamcorper ipsum sagittis neque finibus, sed lacinia libero mollis. Proin bibendum nulla at velit faucibus interdum. Ut congue ipsum mollis, varius augue sit amet, tincidunt velit. Nullam vestibulum sapien at odio sodales luctus. Fusce vitae commodo nisi. In hac habitasse platea dictumst. Phasellus nibh lectus, lobortis mollis pulvinar quis, tempus id nisl. Nullam vitae nibh rhoncus, ornare magna a, laoreet metus. Donec accumsan interdum maximus. Sed vulputate felis et dignissim finibus. Vestibulum bibendum mattis augue, ut mollis justo hendrerit a. Ut a metus porta, cursus quam vel, vestibulum augue. Proin aliquet lacinia convallis.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nibh nisl, iaculis a neque ac, mattis scelerisque purus. Integer a nulla mollis, venenatis eros id, luctus eros. Maecenas et vulputate turpis. Suspendisse sagittis tellus eget purus auctor, eu varius est consectetur. Nullam a massa tellus. Vivamus faucibus in tortor quis pellentesque. Nunc tristique libero arcu, egestas blandit eros vehicula sit amet. Nullam iaculis, dolor sed euismod volutpat, nunc est mattis nibh, sit amet sagittis leo arcu ultrices massa. Mauris feugiat purus vitae massa luctus, eu pretium sapien vestibulum. Sed nisl dui, vehicula sit amet lacus quis, lacinia mollis magna. Curabitur risus turpis, rhoncus efficitur mi vel, dignissim ultricies nunc. Fusce mattis ex ut libero porta convallis.
+		</p>
+		<p>
+			Curabitur ullamcorper ipsum sagittis neque finibus, sed lacinia libero mollis. Proin bibendum nulla at velit faucibus interdum. Ut congue ipsum mollis, varius augue sit amet, tincidunt velit. Nullam vestibulum sapien at odio sodales luctus. Fusce vitae commodo nisi. In hac habitasse platea dictumst. Phasellus nibh lectus, lobortis mollis pulvinar quis, tempus id nisl. Nullam vitae nibh rhoncus, ornare magna a, laoreet metus. Donec accumsan interdum maximus. Sed vulputate felis et dignissim finibus. Vestibulum bibendum mattis augue, ut mollis justo hendrerit a. Ut a metus porta, cursus quam vel, vestibulum augue. Proin aliquet lacinia convallis.
+		</p>
+		<div id="greenBox" class="trackInView">#greenBox</div>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nibh nisl, iaculis a neque ac, mattis scelerisque purus. Integer a nulla mollis, venenatis eros id, luctus eros. Maecenas et vulputate turpis. Suspendisse sagittis tellus eget purus auctor, eu varius est consectetur. Nullam a massa tellus. Vivamus faucibus in tortor quis pellentesque. Nunc tristique libero arcu, egestas blandit eros vehicula sit amet. Nullam iaculis, dolor sed euismod volutpat, nunc est mattis nibh, sit amet sagittis leo arcu ultrices massa. Mauris feugiat purus vitae massa luctus, eu pretium sapien vestibulum. Sed nisl dui, vehicula sit amet lacus quis, lacinia mollis magna. Curabitur risus turpis, rhoncus efficitur mi vel, dignissim ultricies nunc. Fusce mattis ex ut libero porta convallis.
+		</p>
+		<p>
+			Curabitur ullamcorper ipsum sagittis neque finibus, sed lacinia libero mollis. Proin bibendum nulla at velit faucibus interdum. Ut congue ipsum mollis, varius augue sit amet, tincidunt velit. Nullam vestibulum sapien at odio sodales luctus. Fusce vitae commodo nisi. In hac habitasse platea dictumst. Phasellus nibh lectus, lobortis mollis pulvinar quis, tempus id nisl. Nullam vitae nibh rhoncus, ornare magna a, laoreet metus. Donec accumsan interdum maximus. Sed vulputate felis et dignissim finibus. Vestibulum bibendum mattis augue, ut mollis justo hendrerit a. Ut a metus porta, cursus quam vel, vestibulum augue. Proin aliquet lacinia convallis.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nibh nisl, iaculis a neque ac, mattis scelerisque purus. Integer a nulla mollis, venenatis eros id, luctus eros. Maecenas et vulputate turpis. Suspendisse sagittis tellus eget purus auctor, eu varius est consectetur. Nullam a massa tellus. Vivamus faucibus in tortor quis pellentesque. Nunc tristique libero arcu, egestas blandit eros vehicula sit amet. Nullam iaculis, dolor sed euismod volutpat, nunc est mattis nibh, sit amet sagittis leo arcu ultrices massa. Mauris feugiat purus vitae massa luctus, eu pretium sapien vestibulum. Sed nisl dui, vehicula sit amet lacus quis, lacinia mollis magna. Curabitur risus turpis, rhoncus efficitur mi vel, dignissim ultricies nunc. Fusce mattis ex ut libero porta convallis.
+		</p>
+		<p>
+			Curabitur ullamcorper ipsum sagittis neque finibus, sed lacinia libero mollis. Proin bibendum nulla at velit faucibus interdum. Ut congue ipsum mollis, varius augue sit amet, tincidunt velit. Nullam vestibulum sapien at odio sodales luctus. Fusce vitae commodo nisi. In hac habitasse platea dictumst. Phasellus nibh lectus, lobortis mollis pulvinar quis, tempus id nisl. Nullam vitae nibh rhoncus, ornare magna a, laoreet metus. Donec accumsan interdum maximus. Sed vulputate felis et dignissim finibus. Vestibulum bibendum mattis augue, ut mollis justo hendrerit a. Ut a metus porta, cursus quam vel, vestibulum augue. Proin aliquet lacinia convallis.
+		</p>
+	</div>
+	<div id="status"></div>
+</body>
+</html>
