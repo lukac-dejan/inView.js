@@ -16,7 +16,7 @@ First, add the inView.js to your document along with jQuery library:
 
 `<script type="text/javascript" src="_js/jquery.inView.js"></script>`
 
-After that all you need to do is assign a class named .trackInView to all of the elements on the page that you want to track. Once it's done, inView.js will execute on every onresize and onscroll event and assign class named **_.inView_** if the element is in the viewport or **_.notInView_** if it's not. 
+After that all you need to do is assign a class named **_.trackInView_** to all of the elements on the page that you want to track. Once it's done, inView.js will execute on every onresize and onscroll event and assign class named **_.inView_** if the element is in the viewport or **_.notInView_** if it's not. 
 
 
 Limitations
